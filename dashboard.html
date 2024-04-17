@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Aplikasi Microservices</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-secondary sticky sticky-top">
+    <div class="container-fluid">
+      <a href="">
+        <img src="assets/logo.png" alt="logo sekolah" style="height: 50px; height: 50px;">
+      </a>
+      <a class="navbar-brand fw-bold pe-3">SEKOLAH HINTERLAND</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="nav" style="font-size: 12px;">
+        <a class="nav-link text-secondary" aria-current="page" href="home.html">Home</a>
+        <a class="nav-link text-dark active fw-bold" href="#">Dashboard</a>
+        <a class="nav-link text-secondary" href="myCourse.html">My Courses</a>
+      </nav>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ">
+        </ul>
+      </div>
+      <div class="dropdown me-3">
+        <button class="btn text-dark dropdown-toggle border-1 rounded-circle" type="button" id="dropdownSiswa " data-bs-toggle="dropdown" aria-expanded="false position-absolute" style="font-size: 12px; background-color: lightgray;">
+          S1
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownSiswa" style="font-size: 12px;">
+          <li><a class="dropdown-item border-bottom mb-1" href="#">Accesibility</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Grades</a></li>
+          <li><a class="dropdown-item" href="#">Calendar</a></li>
+          <li><a class="dropdown-item" href="#">Private Files</a></li>
+          <li><a class="dropdown-item border-bottom mb-1" href="#">Report</a></li>
+          <li><a class="dropdown-item border-bottom mb-1" href="#">Preferences</a></li>
+          <li><a class="dropdown-item" href="login.html">Log out</a></li>
+        </ul>
+        <span class="border-dark border-end border-1 ms-3"></span>
+      </div>
+      <div style="font-size: 12px; padding-right: 10px;">Edit mode</div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Navbar End -->
+    <!-- konten -->
+    <div class="container">
+        <h4 class="fw-bold mt-3 mb-5">Dashboard</h4>
+    </div>
+    <div class="container">
+        <h6 class="fw-bold mb-3">Recently accessed course</h6>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination rounded-3">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+    </div>
+    <div class="container">
+        <div class="row position-relative">
+            <div class="col d-flex justify-content-between">
+                <div class="card" style="font-size: 12px;"><span class="badge rounded-3 bg-primary position-absolute mt-2 ms-2" style="font-size: 10px;">Mata Pelajaran</span>
+                    <a href="">
+                        <img src="assets/bg1.png" class="card-img-top "  style="width: 250px ;height: 120px;" alt="course1">
+                        <div class="card-body">
+                          <a href="" class="link-primary text-decoration-none">Bahasa Indonesia/MP1</a>
+                        </div>
+                      </div>
+                    </a>
+            </div>
+            <div class="col d-flex justify-content-between">
+                <div class="card" style="font-size: 12px;"><span class="badge rounded-3 bg-primary position-absolute mt-2 ms-2" style="font-size: 10px;">Mata Pelajaran</span>
+                    <a href="">
+                        <img src="assets/bg2.png" class="card-img-top"  style="width: 250px ;height: 120px;" alt="course1">
+                        <div class="card-body">
+                          <a href="" class="link-primary text-decoration-none">Bahasa Inggris/MP2</a>
+                        </div>
+                      </div>
+                    </a>
+            </div>
+            <div class="col d-flex justify-content-between">
+                <div class="card" style="font-size: 12px;"><span class="badge rounded-3 bg-primary position-absolute mt-2 ms-2" style="font-size: 10px;">Mata Pelajaran</span>
+                    <a href="">
+                        <img src="assets/bg3.png" class="card-img-top"  style="width: 250px ;height: 120px;" alt="course1">
+                        <div class="card-body">
+                          <a href="" class="link-primary text-decoration-none">Matematika/MP3</a>
+                        </div>
+                      </div>
+                    </a>
+            </div>
+            <div class="col d-flex justify-content-between">
+                <div class="card" style="font-size: 12px;" ><span class="badge rounded-3 bg-primary position-absolute mt-2 ms-2" style="font-size: 10px;">Mata Pelajaran</span>
+                    <a href="">
+                        <img src="assets/bg4.png" class="card-img-top"  style="width: 250px ;height: 120px;" alt="course1">
+                        <div class="card-body">
+                          <a href="" class="link-primary text-decoration-none">Pendidikan Agama/MP4</a>
+                        </div>
+                      </div>
+                    </a>
+            </div>
+        </div>
+        </div>
+    <!-- konten end -->
+    <!-- timeline -->
+
+    <div class="container">
+      <h6 class="fw-bold mb-3 mt-5">Timeline</h6>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="d-flex position-relative">
+        <div class="dropdown">
+          <select class="form-select form-select-sm mb-2 me-2 text-secondary rounded-3" aria-label=".form-select-sm example" style="font-size: 12px; width: auto;">
+              <option selected>All</option>
+              <option value="overdue">Overdue</option> <hr>
+              <option value="7days">Next 7 days</option>
+              <option value="30days">Next 30 days</option>
+              <option value="3months">Next 3 months</option>
+              <option value="6months">Next 6 months</option>
+            </select>
+        </div>  
+
+      <div class="dropdown">
+        <select class="form-select form-select-sm mb-2 text-secondary rounded-3" aria-label=".form-select-sm example" style="font-size: 12px; width: auto;">
+            <option selected>Sort by dates</option>
+            <option value="courses">Sort by courses</option>
+          </select>
+      </div>  
+
+      <input class="form-control position-absolute top-0 end-0 rounded-3" list="datalistOptions" id="exampleDataList" placeholder="Search by activity type or name" style="width: 450px; font-size: 12px;">
+    </div>
+    <hr class="mt-2">
+    <i class="fa-solid fa-bars-progress"></i>
+    <h6 class="text-secondary text-center" style="font-size: 10px;">Tidak ada aktivitas</h6>
+  </div> 
+
+    <!-- timeline end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
