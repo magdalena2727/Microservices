@@ -1,23 +1,31 @@
-// On install - caching the application shell
-self.addEventListener('install', function(event) {
-    event.waitUntil(
-      caches.open('sw-cache').then(function(cache) {
-        // cache any static files that make up the application shell
-        // return cache.add('index.html');
-        return cache.addAll([
-          'index.html','login.html','home.html','dashboard.html','myCourse.html'
-        ])
-      })
-    );
-  });
-  
-  // On network request
-  self.addEventListener('fetch', function(event) {
-    event.respondWith(
-      // Try the cache
-      caches.match(event.request).then(function(response) {
-        //If response found return it, else fetch again
-        return response || fetch(event.request);
-      })
-    );
-  });
+const cacheName = "PWA Microservices"
+const preCache = ["/","/login.html","/home.html","/forgotpassword.html","/myCourse.html","/dashboard.html","/user/grade.html","/user/preferences.html","/user/profile.html"]
+
+
+self.addEventListener("install", (e) => {
+  console.log("Service Worker Installed")
+
+  e.waitUntil((async ()=>{
+    const cache = await caches.open(cacheName)
+    cache.addAll(preCache)
+  })(),
+)
+})
+
+self.addEventListener("fetch",(e)=>{
+  e.respondWith((async ()=>{
+    const cache = await caches.open(cacheName)
+    const resCache = await cache.match(e.request)
+
+    if(resCache) return resCache
+
+    try{
+      const res = await fetch(e.request)
+
+      cache.put(e.request,res.clone())
+      return res
+    } catch (error) {
+      console.log(error)
+    }
+  })(),)
+})

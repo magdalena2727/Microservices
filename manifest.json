@@ -1,11 +1,10 @@
 {
     "short_name": "PWA1",
     "name": "PWA Microservices",
-    "start_url": "/index.html",
+    "start_url": ".",
     "display": "standalone",
-    "theme_color": "#29BDBB",
-    "background_color": "#29BDBB",
-    "orientation": "portrait-primary",
+    "theme_color": "#f8fcfa",
+    "background_color": "#f8fcfa",
     "icons": [
       {
         "src": "/images/logo192.png",
@@ -15,7 +14,8 @@
       {
         "src": "/images/logo512.png",
         "type": "image/png",
-        "sizes": "512x512"
+        "sizes": "512x512",
+        "purpose":"maskable"
       }
       
     ]
