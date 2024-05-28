@@ -1,5 +1,5 @@
 const cacheName = "PWA Microservices"
-const preCache = ["/","/login.html","/home.html","/forgotpassword.html","/myCourse.html","/dashboard.html","/user/grade.html","/user/preferences.html","/user/profile.html"]
+const preCache = ["/","/login.html","/home.html","/forgotpassword.html","/myCourse.html","/dashboard.html","/user/grade.html","/user/preferences.html","/user/profile.html","/course/course1.html","/course/course2.html","/course/course3.html","/course/course4.html","/course/diskusi.html"]
 
 
 self.addEventListener("install", (e) => {

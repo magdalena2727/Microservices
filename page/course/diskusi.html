@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Diskusi</title>
+  <!-- Link to Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .reply-section {
+      margin-left: 20px;
+    }
+    .back {
+          margin: auto;
+          margin-top: 10px;
+          text-align: center;
+        }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <header class="mb-4">
+      <h1 class="text-center">Forum Diskusi</h1>
+    </header>
+    
+    <!-- Form untuk Posting Diskusi Baru -->
+    <section class="mb-4">
+      <div class="card">
+        <div class="card-header">
+          Buat Diskusi Baru
+        </div>
+        <div class="card-body">
+          <form id="new-discussion-form">
+            <div class="mb-3">
+              <label for="topic" class="form-label">Topik</label>
+              <input type="text" class="form-control" id="topic" required>
+            </div>
+            <div class="mb-3">
+              <label for="content" class="form-label">Konten</label>
+              <textarea class="form-control" id="content" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Posting</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Daftar Diskusi -->
+    <section>
+      <div class="card">
+        <div class="card-header">
+          Diskusi
+        </div>
+        <div class="card-body" id="discussion-list">
+          <!-- Diskusi akan ditambahkan di sini -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Link to Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+  <script>
+    // Fungsi untuk menambahkan diskusi baru ke daftar diskusi
+    document.getElementById('new-discussion-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Ambil nilai dari input form
+      const topic = document.getElementById('topic').value;
+      const content = document.getElementById('content').value;
+      
+      // Buat elemen diskusi baru
+      const discussionItem = document.createElement('div');
+      discussionItem.classList.add('mb-3');
+      discussionItem.innerHTML = `
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">${topic}</h5>
+            <p class="card-text">${content}</p>
+            <button class="btn btn-secondary btn-sm" onclick="toggleReplyForm(this)">Balas</button>
+            <div class="reply-section mt-3" style="display: none;">
+              <form onsubmit="addReply(event, this)">
+                <div class="mb-3">
+                  <label for="reply-content" class="form-label">Balasan</label>
+                  <textarea class="form-control" rows="2" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm">Posting Balasan</button>
+              </form>
+              <div class="reply-list mt-3">
+                <!-- Balasan akan ditambahkan di sini -->
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      // Tambahkan elemen diskusi baru ke daftar diskusi
+      document.getElementById('discussion-list').appendChild(discussionItem);
+      
+      // Reset form
+      document.getElementById('new-discussion-form').reset();
+    });
+
+    // Fungsi untuk menampilkan/menyembunyikan form balasan
+    function toggleReplyForm(button) {
+      const replySection = button.nextElementSibling;
+      replySection.style.display = replySection.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Fungsi untuk menambahkan balasan ke diskusi
+    function addReply(event, form) {
+      event.preventDefault();
+      
+      // Ambil nilai dari textarea balasan
+      const replyContent = form.querySelector('textarea').value;
+      
+      // Buat elemen balasan baru
+      const replyItem = document.createElement('div');
+      replyItem.classList.add('card', 'mb-2');
+      replyItem.innerHTML = `
+        <div class="card-body">
+          <p class="card-text">${replyContent}</p>
+        </div>
+      `;
+      
+      // Tambahkan elemen balasan baru ke daftar balasan
+      form.nextElementSibling.appendChild(replyItem);
+      
+      // Reset form balasan
+      form.reset();
+    }
+  </script>
+</body>
+</html>
